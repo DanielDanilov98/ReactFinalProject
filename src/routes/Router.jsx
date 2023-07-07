@@ -31,36 +31,67 @@ import FavCardsPage from "../cards/pages/FavCardsPage";
 const Router = () => {
   return (
     <Routes>
+      <Route path="/" element={<CardsPage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.CARDS} element={<CardsPage />} />
-      <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailPage />} /> {/** /card-info/kjshdf98sdf98s */}
+      <Route
+        path={`${ROUTES.CARD_INFO}/:id`}
+        element={<CardDetailPage />}
+      />{" "}
+      {/** /card-info/kjshdf98sdf98s */}
       <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       <Route path={ROUTES.MY_CARDS} element={<MyCardsPage />} />
-      <Route path={`${ROUTES.EDIT_CARD}/:id`} element={<EditCardPage />} /> {/** /edit-card/kjshdf98sdf98s */}
+      <Route path={`${ROUTES.EDIT_CARD}/:id`} element={<EditCardPage />} />{" "}
+      {/** /edit-card/kjshdf98sdf98s */}
       <Route path={ROUTES.CREATE_CARD} element={<CreateCardPage />} />
       <Route path={ROUTES.FAV_CARDS} element={<FavCardsPage />} />
-
-
       <Route path={ROUTES.SIGNUP} element={<SignupPage />} />
-      <Route path={ROUTES.SANDBOX} element={<SandBox />}>                 {/** /sandbox */}
-        <Route path="todo" element={<SetArray />} />                      {/** /sandbox/todo */}
-        <Route path="custom-counter-hook" element={<CustomCounterHook />} />                      {/** /sandbox/todo */}
+      <Route path={ROUTES.SANDBOX} element={<SandBox />}>
+        {" "}
+        {/** /sandbox */}
+        <Route path="todo" element={<SetArray />} /> {/** /sandbox/todo */}
+        <Route
+          path="custom-counter-hook"
+          element={<CustomCounterHook />}
+        />{" "}
+        {/** /sandbox/todo */}
         <Route path="context" element={<A />} />
         <Route path="form" element={<FormTest />} />
         <Route path="memoization" element={<Memoization />}>
-          <Route path="use-callback" element={<UseCallback />} />         {/** /sandbox/memoization/use-callback */}
-          <Route path="use-memo" element={<UseMemo />} />         {/** /sandbox/memoization/use-memo */}
+          <Route path="use-callback" element={<UseCallback />} />{" "}
+          {/** /sandbox/memoization/use-callback */}
+          <Route path="use-memo" element={<UseMemo />} />{" "}
+          {/** /sandbox/memoization/use-memo */}
         </Route>
-        <Route path="life-cycle" element={<LifeCycleHooks />}>            {/** /sandbox/life-cycle */}
-          <Route path="initial" element={<InitialCycle />} />             {/** /sandbox/life-cycle/initial */}
-          <Route path="use-state-cycle" element={<UseStateCycle />} />    {/** /sandbox/life-cycle/use-state-cycle */}
-          <Route path="component-did-mount" element={<UseEffectAsComponentDidMount />} />    {/** /sandbox/life-cycle/use-state-cycle */}
-          <Route path="component-did-update" element={<UseEffectAsComponentDidUpdate />} />    {/** /sandbox/life-cycle/use-state-cycle */}
-          <Route path="component-will-unmount" element={<UseEffectAsComponentWillUnmount />} />    {/** /sandbox/life-cycle/use-state-cycle */}
-          <Route path="component-no-dependencies" element={<UseEffectAsComponentUpdateNoDeps />} />    {/** /sandbox/life-cycle/use-state-cycle */}
+        <Route path="life-cycle" element={<LifeCycleHooks />}>
+          {" "}
+          {/** /sandbox/life-cycle */}
+          <Route path="initial" element={<InitialCycle />} />{" "}
+          {/** /sandbox/life-cycle/initial */}
+          <Route path="use-state-cycle" element={<UseStateCycle />} />{" "}
+          {/** /sandbox/life-cycle/use-state-cycle */}
+          <Route
+            path="component-did-mount"
+            element={<UseEffectAsComponentDidMount />}
+          />{" "}
+          {/** /sandbox/life-cycle/use-state-cycle */}
+          <Route
+            path="component-did-update"
+            element={<UseEffectAsComponentDidUpdate />}
+          />{" "}
+          {/** /sandbox/life-cycle/use-state-cycle */}
+          <Route
+            path="component-will-unmount"
+            element={<UseEffectAsComponentWillUnmount />}
+          />{" "}
+          {/** /sandbox/life-cycle/use-state-cycle */}
+          <Route
+            path="component-no-dependencies"
+            element={<UseEffectAsComponentUpdateNoDeps />}
+          />{" "}
+          {/** /sandbox/life-cycle/use-state-cycle */}
         </Route>
       </Route>
-
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
