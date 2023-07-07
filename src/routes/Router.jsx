@@ -27,6 +27,8 @@ import MyCardsPage from "../cards/pages/MyCardsPage";
 import CreateCardPage from "../cards/pages/CreateCardPage";
 import EditCardPage from "../cards/pages/EditCardPage";
 import FavCardsPage from "../cards/pages/FavCardsPage";
+import EditUserPage from "../users/pages/EditUserPage";
+import UserProfile from "../users/pages/UserProfile";
 
 const Router = () => {
   return (
@@ -34,26 +36,22 @@ const Router = () => {
       <Route path="/" element={<CardsPage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.CARDS} element={<CardsPage />} />
-      <Route
-        path={`${ROUTES.CARD_INFO}/:id`}
-        element={<CardDetailPage />}
-      />{" "}
+      <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailPage />} />
       {/** /card-info/kjshdf98sdf98s */}
       <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       <Route path={ROUTES.MY_CARDS} element={<MyCardsPage />} />
-      <Route path={`${ROUTES.EDIT_CARD}/:id`} element={<EditCardPage />} />{" "}
+      <Route path={`${ROUTES.EDIT_CARD}/:id`} element={<EditCardPage />} />
       {/** /edit-card/kjshdf98sdf98s */}
       <Route path={ROUTES.CREATE_CARD} element={<CreateCardPage />} />
       <Route path={ROUTES.FAV_CARDS} element={<FavCardsPage />} />
       <Route path={ROUTES.SIGNUP} element={<SignupPage />} />
+
+      <Route path={ROUTES.USER_PROFILE} element={<UserProfile />} />
+      <Route path={ROUTES.EDIT_USER} element={<EditUserPage />} />
+      {/** /sandbox */}
       <Route path={ROUTES.SANDBOX} element={<SandBox />}>
-        {" "}
-        {/** /sandbox */}
         <Route path="todo" element={<SetArray />} /> {/** /sandbox/todo */}
-        <Route
-          path="custom-counter-hook"
-          element={<CustomCounterHook />}
-        />{" "}
+        <Route path="custom-counter-hook" element={<CustomCounterHook />} />
         {/** /sandbox/todo */}
         <Route path="context" element={<A />} />
         <Route path="form" element={<FormTest />} />
